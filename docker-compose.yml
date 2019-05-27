@@ -1,0 +1,13 @@
+version: "3"
+services:
+  mysql:
+    volumes:
+      - ./BOOKBIZ.SQL:/var/BOOKBIZ.SQL
+      - ./data:/var/lib/mysql
+    container_name: learn_mysql
+    image: mysql:5.7
+    environment:
+        - 'MYSQL_ROOT_PASSWORD=secret'
+        - 'MYSQL_DATABASE=learn_mysql'
+    ports:
+      - 3306:3306
